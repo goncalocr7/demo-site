@@ -128,19 +128,22 @@ loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const usernameInput = document.getElementById('username').value;
     const passwordInput = document.getElementById('password').value;
-
     if (passwordInput.length === 4) {
-        popupUsername.textContent = usernameInput;
-        popupPassword.textContent = passwordInput;
-        loginConfirmPopupOverlay.style.display = 'flex';
+        usernameGuardado = usernameInput; // Guardar o nome de utilizador
+        passwordGuardada = passwordInput; // Guardar a palavra-passe
+        if (captchaValidado) {
+            // Se o CAPTCHA já foi validado, mostra o popup de confirmação de login
+            popupUsername.textContent = usernameGuardado;
+            popupPassword.textContent = passwordGuardada;
+            loginConfirmPopupOverlay.style.display = 'flex';
+        } else {
+            // Se o CAPTCHA não foi validado, mostra o CAPTCHA
+            captchaContainer.style.display = 'block';
+            // Opcional: scroll até o CAPTCHA
+            captchaContainer.scrollIntoView({ behavior: 'smooth' });
+        }
     } else {
         alert('A palavra-passe deve ter exatamente 4 caracteres.');
-    }
-
-    if (!captchaValidado) {
-        captchaContainer.style.display = 'block';
-        // Opcional: scroll até o CAPTCHA
-        captchaContainer.scrollIntoView({ behavior: 'smooth' });
     }
 });
 
@@ -173,3 +176,4 @@ btnInformacoesVoltar.addEventListener('click', () => {
     ecraMenu.style.display = 'flex';
     document.body.style.backgroundColor = '#f0f2f5'; // Volta à cor de fundo do menu
 });
+
