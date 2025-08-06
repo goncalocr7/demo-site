@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo!</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+    <div id="ecra-boas-vindas" class="ecra">
+        <a href="#" id="botao-bem-vindo" class="botao-verde">BEM-VINDO</a>
+    </div>
+
+    <div id="ecra-menu" class="ecra">
+        <div class="menu-container">
+            <h2>Menu Principal</h2>
+            <button id="btn-menu-login" class="menu-botao">Ir para Login</button>
+            <button id="btn-menu-fim" class="menu-botao">Ir para o Fim</button>
+            <button id="btn-menu-informacoes" class="menu-botao">Informações</button>
+            <button id="btn-menu-inicio" class="menu-botao botao-secundario">Voltar ao Início</button>
+        </div>
+    </div>
+
+    <div id="ecra-login" class="ecra">
+        <div class="container-login">
+            <h1>Login</h1>
+            <p>Por favor, faça o login para continuar.</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Nome de utilizador:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Palavra-passe:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <!-- reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="AQUI_VAI_A_TUA_SITE_KEY"></div>
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ecra-fim" class="ecra">
+        <a href="#" class="botao-verde">FIM</a>
+    </div>
+
+    <div id="ecra-informacoes" class="ecra">
+        <div class="container-simples">
+            <h1>Sobre o Nosso Site</h1>
+            <p>Este site foi desenvolvido com o objetivo de demonstrar a navegação entre diferentes ecrãs e a interação com utilizadores ao fazer Login.</p>
+            <p>É um projeto simples para ilustrar conceitos de interface de utilizador e fluxo de navegação. Esperamos que seja útil para aprender e experimentar!</p>
+            <button id="btn-informacoes-voltar" class="menu-botao botao-secundario">Voltar ao Menu</button>
+        </div>
+    </div>
+
+    <div id="welcome-popup-overlay" class="popup-overlay">
+        <div class="popup-caixa">
+            <h2>Bem-vindo ao nosso site!</h2>
+            <p>Clique em OK para ver o menu de opções.</p>
+            <div class="popup-botoes">
+                <button id="welcome-popup-cancel-btn" class="botao-cancelar">Cancelar</button>
+                <button id="welcome-popup-ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-confirm-popup-overlay" class="popup-overlay">
+        <div class="popup-caixa">
+            <h2>Dados Inseridos</h2>
+            <p><strong>Utilizador:</strong> <span id="popup-username"></span></p>
+            <p><strong>Palavra-passe:</strong> <span id="popup-password"></span></p>
+            <div class="popup-botoes">
+                <button id="login-confirm-popup-ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="final-confirm-popup-overlay" class="popup-overlay">
+        <div class="popup-caixa">
+            <h2>Pronto para terminar?</h2>
+            <p>Tem a certeza que quer ir para o fim?</p>
+            <div class="popup-botoes">
+                <button id="final-confirm-popup-cancel-btn" class="botao-cancelar">Cancelar</button>
+                <button id="final-confirm-popup-ok-btn">Sim, ir para o Fim</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="logica.js" defer></script>
+</body>
+</html>
