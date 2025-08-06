@@ -36,7 +36,7 @@ const finalConfirmPopupOverlay = document.getElementById('final-confirm-popup-ov
 const finalConfirmPopupOkBtn = document.getElementById('final-confirm-popup-ok-btn');
 const finalConfirmPopupCancelBtn = document.getElementById('final-confirm-popup-cancel-btn');
 
-const captchaContainer = document.getElementById('turnstile-container');
+const captchaContainer = document.getElementById('container');
 
 let captchaValidado = false; // Flag para saber se o captcha foi validado
 let usernameGuardado = "";
